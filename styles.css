@@ -60,6 +60,9 @@ a { color: inherit; text-decoration: none; }
   transition: 180ms ease;
 }
 
+.button,
+.footer button { border-color: var(--text); }
+
 .nav-links a:hover,
 .button:hover,
 .back-link:hover,
@@ -171,6 +174,120 @@ h3 { margin: 0; font-size: 1.45rem; }
 .game-card .discount { background: var(--yellow); animation: pulse 1.8s ease-in-out infinite; }
 .back-link { display: inline-block; margin-top: 30px; }
 
+.registration-section {
+  padding: 76px 6%;
+  background:
+    radial-gradient(circle at top left, rgba(242, 183, 5, 0.24), transparent 32%),
+    linear-gradient(135deg, #fff8e8 0%, #f6dfc5 100%);
+}
+
+.registration-shell { max-width: 1180px; padding: 0; }
+
+.registration-intro,
+.registration-form {
+  border: 3px solid var(--text);
+  border-radius: var(--radius);
+  box-shadow: 8px 8px 0 rgba(43, 33, 24, 0.9);
+}
+
+.registration-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 28px;
+  padding: clamp(24px, 4vw, 42px);
+  background: var(--green);
+  color: #fff8e8;
+}
+
+.registration-intro .eyebrow { color: var(--yellow); }
+.registration-intro p:not(.eyebrow) { color: #fcebd1; line-height: 1.7; }
+
+.reward-note {
+  padding: 14px 16px;
+  border: 2px dashed #fff8e8;
+  border-radius: 16px;
+  background: rgba(255, 248, 232, 0.12);
+  font-weight: 800;
+}
+
+.reward-note.ready {
+  background: var(--yellow);
+  color: var(--text);
+}
+
+.registration-form {
+  padding: clamp(22px, 4vw, 36px);
+  background: var(--card);
+}
+
+.registration-form .form-label {
+  margin-bottom: 7px;
+  color: var(--text);
+  font-weight: 800;
+}
+
+.registration-form .form-label span {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.registration-form .form-control {
+  border: 2px solid var(--text);
+  border-radius: 14px;
+  padding: 12px 14px;
+  background: #fffdf7;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.registration-form .form-control:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 0.24rem rgba(31, 122, 114, 0.18);
+}
+
+.registration-form .form-control.is-invalid {
+  border-color: var(--primary);
+  background-image: none;
+}
+
+.registration-form .form-control.is-valid {
+  border-color: var(--green);
+  background-image: none;
+}
+
+.field-message {
+  display: block;
+  min-height: 21px;
+  margin-top: 5px;
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.field-message.valid { color: var(--green); }
+
+.form-status {
+  padding: 13px 15px;
+  border: 2px solid var(--text);
+  border-radius: 14px;
+  background: #f3ead7;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.form-status.success {
+  background: #d7f0dd;
+  color: #235c33;
+}
+
+.form-status.error {
+  background: #ffe1d9;
+  color: var(--primary);
+}
+
+.form-button { margin-top: 0; cursor: pointer; }
+.form-button.secondary { background: var(--card); color: var(--text); }
+
 .footer {
   padding: 26px 6%;
   background: var(--green);
@@ -207,6 +324,8 @@ h3 { margin: 0; font-size: 1.45rem; }
 @media (max-width: 900px) {
   .category-grid,
   .game-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .registration-section { padding-top: 58px; padding-bottom: 58px; }
 }
 
 @media (max-width: 650px) {
@@ -217,5 +336,9 @@ h3 { margin: 0; font-size: 1.45rem; }
   .hero { min-height: auto; }
   .hero-content,
   .section,
-  .catalog-section { padding-top: 48px; padding-bottom: 48px; }
+  .catalog-section,
+  .registration-section { padding-top: 48px; padding-bottom: 48px; }
+
+  .registration-intro,
+  .registration-form { box-shadow: 5px 5px 0 rgba(43, 33, 24, 0.9); }
 }
